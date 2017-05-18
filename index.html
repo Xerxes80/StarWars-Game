@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  
+    <title>StarWars</title>
+</head>
+<body >
+    <!--Header-->
+<header class="navbar ">
+    <h2 class="navbar-brand">Star Wars RPG</h2>
+</header>
+    <!--board-->
+<div class="container">
+    <!--scoreboard-->
+<div class="row ">
+    <div class="col-md-6 ">
+        <section class="container1">
+            <h3 class="title">Select Your Character</h3>
+            <div class="scores" id="scores">
+               
+                <div class="characters">
+                    <div class="row no-gutters">
+                        <div class="ch col-3" id="ch1"><img class="img" src="assets/image/Sky-Walker.png">Sky Walker</div>
+                        <div class="ch col-3" id="ch2"><img class="img" src="assets/image/Count-Dokoo.png">Count Dokoo</div>
+                        <div class="ch col-3" id="ch3"><img class="img" src="assets/image/Dart-Vader.png">Dart Vader</div>
+                        <div class="ch col-3" id="ch4"><img class="img" src="assets/image/Qui-Gon-Jinn.png">Qui Gon Jinn</div>
+                    </div>
+                </div>
+            </div>
+        </section> <!--section-1-->
+    </div> <!--col-sm-4-->
+    <!--gameboard-->
+    <div class="col-md-6 ">
+        <section class="container2">
+            <h3 class="title">Game Board</h3>
+            <div class="word-board" id="word-board">
+                <p class="word-letters" id="the-word"></p>
+            </div>
+            <div class="message-box" ><h3 id="message"></h3></div>
+            <button type="button" class="btn" id="btn" onclick = "startFunction()">Start</button>
+        </section> <!--section-2-->
+    </div> <!--col-sm-8-->
+</div> <!--row-->
+</div> <!--container-->
+<footer class="footer">
+    &copy;Copyright2017 Kevin Tabesh
+</footer>
+<script src="assets/javascript/game.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
