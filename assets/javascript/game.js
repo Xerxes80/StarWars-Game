@@ -17,8 +17,8 @@ var enemyRemainingpower = 0;
 var enemyAttackpower = 0;
 var isCharSelected = false;
 var opponentsSelected =false;
-var audio = new Audio("assets/sounds/result.mp3");
-
+var audio = new Audio("");
+audio.src="assets/sounds/fight.mp3";
 $(".ch").on("click", function(){
     if(!isCharSelected && !opponentsSelected){
         var charSelect = this.id;
@@ -47,7 +47,9 @@ $(".ch").on("click", function(){
         enemyAttackpower = characters[charSelect].attackPower;
         opponentsSelected = true;
         counter++;
+        audio.play();
     }
+    
 });
 
 $("#attack").on("click", function(){
@@ -69,6 +71,8 @@ $("#attack").on("click", function(){
             $(".defender-msg ").text("You've Been Defeated ... Game Over");
             $(".enemy-msg").text("");
             $("#defender").hide();
+            audio.src="assets/sounds/result.mp3";
+            audio.play();
             
         }else if(enemyRemainingpower <= 0 && counter < 4){
             
@@ -80,10 +84,11 @@ $("#attack").on("click", function(){
             
         }else if(enemyRemainingpower <= 0 && counter === 4){
             
-            audio.play();
             $(".defender-msg").text("You Won The Game ........ Game Over");
             $(".enemy-msg").text("");
             $("#enemy").hide();
+            audio.src="assets/sounds/result.mp3";
+            audio.play();
         }
     }                 
 });
