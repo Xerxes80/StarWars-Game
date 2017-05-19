@@ -1,12 +1,12 @@
 $(document).ready(function() {
     
-var characters=[
+var characters =[
     ch1 = {name: "Sky Walker", img: "assets/image/Sky-Walker.png", power: 120, attackPower: 8 }, 
     ch2 = {name: "Count Dokoo", img: "assets/image/Count-Dokoo.png", power: 100, attackPower: 5 },
     ch3 = {name: "Dart Vader", img: "assets/image/Dart-Vader.png", power: 150, attackPower: 20 },
     ch4 = {name: "Qui Gon jinn", img: "assets/image/Qui-Gon-Jinn.png", power: 180, attackPower: 25 }
 ];
-
+var audio;
 var counter = 0;
 var defenderName ="";
 var enemyName ="";
@@ -17,6 +17,7 @@ var enemyRemainingpower = 0;
 var enemyAttackpower = 0;
 var isCharSelected = false;
 var opponentsSelected =false;
+var audio = new Audio("assets/sounds/result.mp3");
 
 $(".ch").on("click", function(){
     if(!isCharSelected && !opponentsSelected){
@@ -64,7 +65,7 @@ $("#attack").on("click", function(){
         defenderAttackPower += defenderBaseAttPower;
         
         if(defenderRemainingpower <= 0){
-            
+           
             $(".defender-msg ").text("You've Been Defeated ... Game Over");
             $(".enemy-msg").text("");
             $("#defender").hide();
@@ -79,6 +80,7 @@ $("#attack").on("click", function(){
             
         }else if(enemyRemainingpower <= 0 && counter === 4){
             
+            audio.play();
             $(".defender-msg").text("You Won The Game ........ Game Over");
             $(".enemy-msg").text("");
             $("#enemy").hide();
